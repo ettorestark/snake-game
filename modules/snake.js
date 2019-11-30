@@ -2,6 +2,7 @@ import Game from './Game.js'
 
 class Snake {
 	constructor() {
+		this.color = "#FFF";
 		this.x = 0;
 		this.y = 0;
 		this.xSpeed = Game.scale*1;
@@ -15,7 +16,7 @@ class Snake {
 			Game.context.fillRect(this.tail[i].x, this.tail[i].y, Game.scale, Game.scale);
 		}
 
-		Game.context.fillStyle = '#000';
+		Game.context.fillStyle = this.color;
 		Game.context.fillRect(this.x, this.y, Game.scale, Game.scale);
 	}
 

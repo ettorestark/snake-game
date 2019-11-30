@@ -1,6 +1,7 @@
 import Game from './Game.js'
 import Snake from './snake.js';
 import Fruit from './Fruit.js';
+import Score from './Score.js'
 
 const snake = new Snake();
 const fruit = new Fruit();

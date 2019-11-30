@@ -13,6 +13,8 @@ class Game {
 
 	clear() {
 		this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
+		this.context.fillStyle = "#000";
+		this.context.fillRect(0, 0, this.canvas.width, this.canvas.height);
 	}
 }
 
