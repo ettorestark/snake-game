@@ -2,7 +2,7 @@ import Game from './Game.js';
 
 class Snake {
 	constructor() {
-		this.color = "#FFF";
+		this.color = "#CCC";
 		this.x = 0;
 		this.y = 0;
 		this.xSpeed = Game.scale*1;

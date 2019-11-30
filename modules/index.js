@@ -14,9 +14,9 @@ function animate() {
 		requestAnimationFrame(animate);
 			Game.clear();
 			
-			score.draw();
 			snake.update();
 			snake.draw();
+			score.draw();
 			fruit.draw();
 
 			if(snake.eat(fruit)) {
