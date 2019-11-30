@@ -1,7 +1,7 @@
 import Game from './Game.js'
+import Score from './Score.js'
 import Snake from './snake.js';
 import Fruit from './Fruit.js';
-import Score from './Score.js'
 
 const score = new Score();
 const snake = new Snake();
@@ -13,6 +13,7 @@ function animate() {
 	setTimeout(() => {
 		requestAnimationFrame(animate);
 			Game.clear();
+			
 			score.draw();
 			snake.update();
 			snake.draw();
@@ -20,9 +21,12 @@ function animate() {
 
 			if(snake.eat(fruit)) {
 				fruit.pickLocation();
+				score.increment();
 			}
 
-			snake.checkColision();
+			if(snake.checkColision()) {
+				score.reset();
+			}
 	}, Game.frames);
 }
 

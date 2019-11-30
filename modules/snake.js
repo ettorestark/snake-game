@@ -1,4 +1,4 @@
-import Game from './Game.js'
+import Game from './Game.js';
 
 class Snake {
 	constructor() {
@@ -9,6 +9,7 @@ class Snake {
 		this.ySpeed = 0;
 		this.total = 0;
 		this.tail = [];
+
 	}
 
 	draw() {
@@ -85,7 +86,9 @@ class Snake {
 			if(this.x === this.tail[i].x && this.y === this.tail[i].y) {
 				this.total = 0;
 				this.tail = [];
+				return true;
 			}
+			return false;
 		}
 	}
 }
