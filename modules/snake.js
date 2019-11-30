@@ -12,11 +12,11 @@ class Snake {
 	}
 
 	draw() {
+		Game.context.fillStyle = this.color;
+
 		for(let i=0; i<this.tail.length; i++) {
 			Game.context.fillRect(this.tail[i].x, this.tail[i].y, Game.scale, Game.scale);
 		}
-
-		Game.context.fillStyle = this.color;
 		Game.context.fillRect(this.x, this.y, Game.scale, Game.scale);
 	}
 
