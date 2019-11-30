@@ -1,11 +1,10 @@
+import Game from './Game.js'
+
 class Snake {
-	constructor(canvas, ctx, scale) {
-		this.canvas = canvas;
-		this.ctx = ctx;
-		this.scale = scale;
+	constructor() {
 		this.x = 0;
 		this.y = 0;
-		this.xSpeed = scale*1;
+		this.xSpeed = Game.scale*1;
 		this.ySpeed = 0;
 		this.total = 0;
 		this.tail = [];
@@ -13,11 +12,11 @@ class Snake {
 
 	draw() {
 		for(let i=0; i<this.tail.length; i++) {
-			this.ctx.fillRect(this.tail[i].x, this.tail[i].y, this.scale, this.scale);
+			Game.context.fillRect(this.tail[i].x, this.tail[i].y, Game.scale, Game.scale);
 		}
 
-		this.ctx.fillStyle = '#FFF';
-		this.ctx.fillRect(this.x, this.y, this.scale, this.scale);
+		Game.context.fillStyle = '#000';
+		Game.context.fillRect(this.x, this.y, Game.scale, Game.scale);
 	}
 
 	update() {
@@ -30,20 +29,20 @@ class Snake {
 		this.x += this.xSpeed;
 		this.y += this.ySpeed;
 
-		if(this.x > this.canvas.width) {
+		if(this.x > Game.canvas.width) {
 			this.x = 0;
 		}
 
-		if(this.y > this.canvas.height) {
+		if(this.y > Game.canvas.height) {
 			this.y = 0;
 		}
 
 		if(this.x < 0) {
-			this.x = this.canvas.width;
+			this.x = Game.canvas.width;
 		}
 
 		if(this.y < 0) {
-			this.y = this.canvas.height;
+			this.y = Game.canvas.height;
 		}
 	}
 
@@ -51,18 +50,21 @@ class Snake {
 		switch(direction) {
 			case 'Up':
 				this.xSpeed = 0;
-				this.ySpeed = -this.scale * 1;
+				this.ySpeed = -Game.scale * 1;
 				break;
+
 			case 'Down':
 				this.xSpeed = 0;
-				this.ySpeed = this.scale * 1;
+				this.ySpeed = Game.scale * 1;
 				break;
+
 			case 'Left':
-				this.xSpeed = -this.scale * 1;
+				this.xSpeed = -Game.scale * 1;
 				this.ySpeed = 0;
 				break;
+
 			case 'Right':
-				this.xSpeed = this.scale * 1;
+				this.xSpeed = Game.scale * 1;
 				this.ySpeed = 0;
 				break;
 		}
