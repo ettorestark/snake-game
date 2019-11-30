@@ -25,8 +25,10 @@ var fruit;
 		if(snake.eat(fruit)) {
 			fruit.pickLocation();
 		}
-	}, 250);
 
+		snake.checkColision();
+
+	}, 250);
 })();
 
 window.addEventListener('keydown', (e) => {

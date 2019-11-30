@@ -76,6 +76,15 @@ class Snake {
 
 		return false;
 	}
+
+	checkColision() {
+		for(let i=0; i<this.tail.length; i++) {
+			if(this.x === this.tail[i].x && this.y === this.tail[i].y) {
+				this.total = 0;
+				this.tail = [];
+			}
+		}
+	}
 }
 
 export default Snake;
